@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Tareas Gemini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+    <div id="setup-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2 class="modal-title">¡Bienvenido!</h2>
+        <p class="modal-description">Vamos a configurar tus tareas.</p>
+        <form id="setup-form">
+          <div class="form-group inline-group">
+            <label for="name">Tu Nombre</label>
+            <input type="text" id="name" placeholder="p. ej., Alex" required />
+          </div>
+          <div class="form-group task-group">
+            <label for="task1">Tus Tres Tareas Principales</label>
+            <div class="task-inputs">
+                <input type="text" id="task1" placeholder="Tarea 1" required />
+                <input type="text" id="task2" placeholder="Tarea 2" required />
+                <input type="text" id="task3" placeholder="Tarea 3" required />
+            </div>
+          </div>
+          <button type="submit" id="start-button">Empezar a Gestionar Tareas</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="app-container" class="app-container">
+      <main>
+        <header>
+          <h1 id="welcome-message"></h1>
+          <p>Este es tu panel de tareas.</p>
+        </header>
+        
+        <div class="task-sections">
+            <section id="present-tasks" class="task-list-section">
+              <h2>Tareas de Hoy</h2>
+              <form id="add-present-task-form" class="add-task-form">
+                <input type="text" id="new-present-task-input" class="add-task-input" placeholder="Añadir una nueva tarea para hoy...">
+                <button type="submit" class="add-task-button">+</button>
+              </form>
+              <ul class="task-list"></ul>
+              <p class="no-tasks-message">No hay tareas para hoy.</p>
+            </section>
+            <section id="future-tasks" class="task-list-section">
+              <h2>Tareas Próximas</h2>
+              <form id="add-future-task-form" class="add-task-form">
+                  <input type="text" id="new-future-task-input" class="add-task-input" placeholder="Añadir una tarea futura...">
+                  <button type="submit" class="add-task-button">+</button>
+              </form>
+              <ul class="task-list"></ul>
+              <p class="no-tasks-message">No hay tareas próximas.</p>
+            </section>
+            <section id="past-tasks" class="task-list-section">
+              <h2>Tareas Pasadas</h2>
+              <ul class="task-list"></ul>
+              <p class="no-tasks-message">No hay tareas pasadas.</p>
+            </section>
+        </div>
+
+        <footer>
+            <button id="action-button">Finalizar Día</button>
+            <div id="completion-message" style="display: none;">
+                <p>¡Buen trabajo! Todas las tareas están completadas.</p>
+            </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

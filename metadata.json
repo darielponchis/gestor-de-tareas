@@ -1,0 +1,5 @@
+{
+  "name": "Gestor de Tareas ",
+  "description": "Una aplicación de lista de tareas moderna donde los usuarios pueden configurar sus tareas iniciales, gestionarlas con fechas de vencimiento y verlas categorizadas por pasado, presente y futuro.",
+  "requestFramePermissions": []
+}
